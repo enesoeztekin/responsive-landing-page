@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap");
+@import url(bootstrap-grid.css);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 400ms ease-in-out;
+  outline: 0;
+}
+
+::selection {
+  background-color: black;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==== GLOBAL ==== */
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn-cta {
+  border: none;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: 3px solid black;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.btn-cta:hover {
+  background-color: black;
+  color: whitesmoke;
+}
+
+.btn-cta-hovered {
+  border: none;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  border: 3px solid black;
+  background-color: black;
+  color: whitesmoke;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.btn-cta-hovered:hover {
+  border: 3px solid white;
+}
+
+.heading {
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin-bottom: 5rem;
+}
+.heading::after {
+  content: "";
+  width: 200px;
+  height: 26px;
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  /* transform: rotateX(180deg); */
+  background: url(img/pencil-effect.svg) no-repeat 0;
+}
+
+.rocket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  z-index: 99;
+  visibility: hidden;
+}
+
+.rocket i {
+  color: white;
+  font-size: 1.5rem;
+  transform: rotate(-90deg);
+}
+/* ==== GLOBAL ==== */
+
+/* ==== HEADER ==== */
+header {
+  padding-top: 1rem;
+}
+
+header .brand {
+  display: inline-block;
+}
+
+header .brand a:hover {
+  border: none;
+}
+
+header nav {
+  float: right;
+}
+
+header .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: all 300ms ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+header .mobile-menu .menu-item {
+  padding: 1rem;
+  text-align: center;
+}
+
+header nav .menu {
+  display: flex;
+  gap: 1rem;
+}
+
+header nav .menu .menu-item {
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  position: relative;
+  top: 3px;
+  width: 32px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.hamburger span {
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background-color: black;
+}
+
+.hamburger .first {
+  top: 0;
+}
+
+.hamburger .middle {
+  top: 9px;
+}
+
+.hamburger .last {
+  top: 18px;
+}
+
+.hamburger.open > .first {
+  transform: rotate(45deg);
+  top: 12px;
+}
+.hamburger.open > .middle {
+  transform: rotate(-45deg);
+  top: 12px;
+}
+.hamburger.open > .last {
+  transform: rotate(-45deg);
+  top: 12px;
+}
+
+header a:hover {
+  border-bottom: 2px solid black;
+  transition: none;
+}
+/* ==== HEADER ==== */
+
+/* ==== HERO ==== */
+section.hero {
+  padding: 10rem 0;
+  position: relative;
+}
+
+section.hero::before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-80%);
+  content: "";
+  width: 102px;
+  height: 153px;
+  background: url(img/bg-abstract.svg) no-repeat 0;
+}
+
+section.hero h2 {
+  font-size: 2.75rem;
+  max-width: 550px;
+}
+
+section.hero p {
+  font-size: 1.5rem;
+  font-weight: 200;
+  max-width: 550px;
+}
+
+section.hero img {
+  max-width: 100%;
+  min-width: 250px;
+}
+/* ==== HERO ==== */
+
+/* ==== ABOUT ==== */
+section.about {
+  padding: 10rem 0;
+}
+
+section.about img {
+  width: 100%;
+  min-width: 200px;
+}
+
+section.about .btn-cta {
+  max-width: 250px;
+  margin-top: 2rem;
+}
+/* ==== ABOUT ==== */
+
+/* ==== TEAM ==== */
+section.team {
+  padding: 10rem 0;
+}
+
+.member {
+  background-color: white;
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+}
+
+.member .member-img {
+  position: relative;
+}
+
+.member-img img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.member-img .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 1rem;
+  width: 100%;
+  height: 2rem;
+  text-align: center;
+  opacity: 0;
+}
+
+.member:hover .social {
+  opacity: 1;
+}
+
+.social a i {
+  color: black;
+  font-size: 1.25rem;
+}
+
+.member .member-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.member-info p {
+  color: #aaaaaa;
+  font-size: 0.8;
+}
+
+/* ==== TEAM ==== */
+
+/* ==== PRICES ==== */
+section.prices {
+  padding: 10rem 0;
+}
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1.25rem;
+  width: 100%;
+  height: 100%;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+}
+
+.price-card h3 {
+  font-size: 1.25rem;
+}
+
+.price-card h4 {
+  font-size: 3rem;
+  color: black;
+}
+
+.price-card h4 sup {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-right: 0.25rem;
+  color: black;
+}
+
+.price-card h4 span {
+  font-size: 1rem;
+  color: #aaaaaa;
+  font-weight: 400;
+}
+
+.price-card ul li {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.price-card ul li.no {
+  color: #aaaaaa;
+  text-decoration: line-through;
+}
+/* ==== PRICES ==== */
+
+/* ==== CONTACT US ==== */
+section.contact {
+  padding: 10rem 0;
+}
+section.contact .social i {
+  color: black;
+  border: 1px solid black;
+  padding: 0.5rem;
+  transition: all 100ms linear;
+}
+
+section.contact .social i:hover {
+  background-color: black;
+  color: white;
+}
+.contact-info i {
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+
+table td:first-child {
+  text-align: center;
+}
+
+table tr td:last-child {
+  padding: 0 1rem;
+  line-height: 2.4;
+}
+
+.contact-form input {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.contact-form input[type="text"] {
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+}
+
+.contact-form input:focus[type="text"] {
+  border: 1px solid black;
+}
+
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  transition: none;
+}
+
+.contact-form textarea:focus {
+  border: 1px solid black;
+}
+
+/* ==== CONTACT US ==== */
+
+/* ==== FOOTER ==== */
+footer {
+  border-top: 1px solid black;
+  padding: 1rem 0;
+  font-weight: 300;
+}
+
+footer p span {
+  font-weight: bold;
+}
+
+footer a {
+  margin-right: 1rem;
+}
+
+footer a:hover {
+  color: gray;
+  font-weight: 500;
+}
+
+footer .footer-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+/* ==== FOOTER ==== */
+
+/* ==== MEDIA QUERIES ==== */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  section.hero h2 {
+    font-size: 2.3rem;
+  }
+  section.hero p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (max-width: 1200px) {
+  header nav .menu {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  section.hero::before {
+    display: none;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+/* ==== MEDIA QUERIES ==== */
